@@ -1,0 +1,482 @@
+/* ================== Prep ================== */
+:root {
+  /* Colors */
+  --red: #ec1c24;
+  --yellow: #fdbd10;
+  --blue: #0066b2;
+  --orange: #ed7902;
+  --white: #ffffff;
+  --black: #283618;
+
+  /* Fonts */
+  --poppins: "Poppins", sans-serif;
+  --RCD: "Radio Canada Big", sans-serif;
+
+  /* Boldness */
+  --font-reguler: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  color: var(--black);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.title {
+  text-align: center;
+  font-family: var(--RCD);
+  font-size: 2rem;
+  padding-top: 100px;
+  padding-bottom: 3rem;
+}
+
+/* ================== BASE ================== */
+
+/* body */
+body {
+  background-color: rgb(255, 227, 194);
+  padding-bottom: 3rem;
+}
+
+/* Header */
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  font-family: var(--poppins);
+  box-shadow: 0 2px 15px var(--black);
+  z-index: 999;
+  background-color: rgba(255, 227, 194, 0.8);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.brand-logo {
+  background-image: url(burger-king-logo.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 2.3rem;
+  width: 2.3rem;
+}
+
+.brand-name {
+  font-weight: var(--font-bold);
+  margin-left: 10px;
+  font-size: 2rem;
+}
+
+span {
+  color: var(--orange);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: var(--font-reguler);
+}
+
+.nav-link {
+  margin: 0 1.4rem;
+  position: relative;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: var(--orange);
+  top: 90%;
+  transition: 0.5s;
+}
+
+.nav-link:hover::before {
+  width: 75%;
+  height: 2px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.menu div {
+  margin: 0rem 0.5rem;
+  margin-top: 1rem;
+  transition: 0.3s;
+}
+
+.menu div:hover {
+  transform: translateY(-0.3rem);
+}
+
+.hamburger#hamburger {
+  display: none;
+}
+
+/* Home */
+.home {
+  display: flex;
+  padding-top: 4rem;
+  height: 46rem;
+  width: 95%;
+  margin: auto;
+}
+
+.burger-home {
+  flex: 1.1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger-home-image {
+  width: 100%;
+  height: 80%;
+  background-image: url(burger-home.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.3s;
+}
+
+.burger-home-image:hover {
+  transform: scale(1.05);
+}
+
+.text-home {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.text-home h1 {
+  font-size: 5rem;
+  font-family: var(--RCD);
+  margin-bottom: -1.4rem;
+}
+
+.text-home p {
+  font-size: 1.4rem;
+  font-family: var(--poppins);
+}
+
+/* Ingredients */
+.ingredients {
+  display: flex;
+  justify-content: space-between;
+  height: 500px;
+  width: 90%;
+  margin: 0 auto;
+  font-family: var(--poppins);
+}
+
+.burger-ingredients {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-ingredients-image {
+  background-image: url(burger-ingredients-image.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80%;
+  transition: 0.3s;
+}
+
+.burger-ingredients-image:hover {
+  transform: scale(1.03);
+}
+
+.ing {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.ing-desc {
+  display: flex;
+  flex: 1;
+  background-color: rgb(255, 223, 185);
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.ing-desc:hover {
+  transform: translateY(-0.2rem);
+}
+
+.ing-desc:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.ing-desc:nth-child(even) .ing-text {
+  text-align: right;
+}
+
+.ing-image-container {
+  flex: 0.5;
+  display: flex;
+}
+
+.ing-desc .image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  width: 100%;
+  height: 100%;
+}
+
+.lettuce-image {
+  background-image: url(lettuce.webp);
+}
+
+.tomato-image {
+  background-image: url(tomato-image.png);
+}
+
+.meat-image {
+  background-image: url(meat-image.webp);
+}
+
+.burger-bun-image {
+  background-image: url(Burger-Bun.webp);
+}
+
+.ing-text {
+  flex: 1.5;
+  font-size: 1.3rem;
+}
+
+.ing-text h1 {
+  font-size: 2rem;
+}
+
+/* Menu */
+.menu-section {
+  width: 95%;
+  background-color: rgb(255, 223, 185);
+  border-radius: 30px;
+  margin: 2rem auto;
+  height: 50rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  row-gap: 3rem;
+  column-gap: 3rem;
+}
+
+.menu-burger {
+  background-color: rgb(249, 211, 165);
+  width: 15%;
+  height: 40%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.menu-burger:hover {
+  transform: scale(1.03);
+}
+
+.menu-burger-image {
+  background-image: url(burger-ingredients-image.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  flex: 1.3;
+}
+
+.menu-burger-text {
+  flex: 0.7;
+  text-align: center;
+  font-family: var(--poppins);
+}
+
+.menu-burger-text .price {
+  font-size: 1.4rem;
+}
+
+/* Contact */
+.contact-container {
+  width: 85%;
+  height: 35rem;
+  background-color: rgb(15, 15, 15);
+  border-radius: 30px;
+  margin: auto;
+  display: flex;
+}
+
+.contact-image {
+  background-image: url(contact-image.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  flex: 1;
+  height: 100%;
+}
+
+.contact-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-text h1 {
+  font-size: 2.4rem;
+}
+
+.contact-text h1,
+.contact-text p {
+  text-align: center;
+  color: rgb(206, 206, 206);
+  font-family: var(--poppins);
+  margin-left: 5rem;
+  margin-right: 05rem;
+}
+
+/* Media Responsive */
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  .burger-home-image {
+    background-size: 90%;
+  }
+
+  .burger-ingredients-image {
+    background-size: 95%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+
+  section.ingredients {
+    flex-direction: column;
+  }
+
+  .burger-ingredients-image {
+    background-size: 70%;
+  }
+
+  .ingredients {
+    height: 600px;
+  }
+
+  .ing-image-container .image {
+    background-size: 50%;
+  }
+
+  div.hamburger#hamburger {
+    display: inline-block;
+  }
+
+  .nav#nav {
+    display: flex;
+    width: 40vw;
+    height: 100vh;
+    background-color: #fff3cd;
+    position: absolute;
+    top: 0;
+    transition: 0.5s;
+    align-items: flex-start;
+    justify-content: flex-start;
+    right: -80%;
+  }
+
+  .active {
+    display: flex;
+    width: 80vw;
+    height: 100vh;
+    background-color: #fff3cd;
+    position: absolute;
+    top: 0;
+    transition: 0.5s;
+    right: 0;
+  }
+
+  .nav-list {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-link {
+    margin: 3rem 0;
+    font-size: 2.5rem;
+    font-weight: var(--font-bold);
+    position: relative;
+  }
+
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: var(--orange);
+    transition: 0.5s;
+    top: 100%;
+  }
+
+  .nav-link:hover::before {
+    width: 75%;
+    height: 2px;
+  }
+
+  .menu-burger {
+    width: 20%;
+  }
+}
